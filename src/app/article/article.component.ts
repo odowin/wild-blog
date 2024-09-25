@@ -2,6 +2,16 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+// Déclaration de l'interface Article à l'extérieur de la classe
+interface Article {
+  title: string;
+  author: string;
+  content: string;
+  image: string;
+  isPublished: boolean;
+  comment: string;
+}
+
 @Component({
   selector: 'app-article',
   standalone: true,
@@ -9,8 +19,10 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './article.component.html',
   styleUrl: './article.component.scss'
 })
+
 export class ArticleComponent {
-  article = {
+  // Utilisation de l'interface Article pour typer l'objet article
+  article: Article = {
     title: 'Titre de l\'article',
     author: 'John Doe',
     content: 'Voici le contenu de l\'article.',
@@ -19,7 +31,7 @@ export class ArticleComponent {
     comment: ''
   };
 
-  // Fonction qui inverse l'état de publication de l'article
+  // Méthode pour publier/dépublier l'article
   togglePublication(): void {
     this.article.isPublished = !this.article.isPublished;
   }

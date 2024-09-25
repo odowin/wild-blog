@@ -1,16 +1,19 @@
 <div class="article-card">
   <h2>{{ article.title }}</h2>
+  <!-- Bouton pour publier/dépublier l'article -->
+  <button (click)="togglePublication()">
+    {{ article.isPublished ? 'Dépublier l\'article' : 'Publier l\'article' }}
+  </button>
   <p>Écrit par : {{ article.author }}</p>
   <img [src]="article.image" alt="Image de l'article">
-  <div *ngIf="article.isPublished">
-    <p>{{ article.content }}</p>
-  </div>
+  <p *ngIf="article.isPublished">{{ article.content }}</p>
+
+  <!-- Champ pour ajouter un commentaire avec two-way binding -->
   <div>
     <label for="comment">Ajouter un commentaire :</label>
-    <input id="comment" [(ngModel)]="article.comment" placeholder="Votre commentaire">
-    <p><strong>Commentaire :</strong> {{ article.comment }}</p>
+    <input id="comment" type="text" [(ngModel)]="article.comment" placeholder="Écrire un commentaire...">
   </div>
-  <button (click)="togglePublication()">
-    {{ article.isPublished ? 'Dépublier' : 'Publier' }} l'article
-  </button>
+
+  <!-- Affichage du commentaire -->
+  <p *ngIf="article.comment">Commentaire : {{ article.comment }}</p>
 </div>

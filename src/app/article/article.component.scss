@@ -1,39 +1,59 @@
 .article-card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 16px;
-  margin: 16px;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background-color: #f9f9f9;
+  text-align: center;
 
   h2 {
-    margin-top: 0;
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
   }
 
   img {
     max-width: 100%;
-    border-radius: 4px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 20px;
   }
 
   button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
     background-color: #007bff;
-    color: white;
     border: none;
-    padding: 8px 16px;
+    border-radius: 5px;
     cursor: pointer;
-    border-radius: 4px;
-    margin-top: 8px;
+    transition: background-color 0.3s ease;
 
     &:hover {
       background-color: #0056b3;
     }
   }
 
-  input {
-    margin-top: 8px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  #comment {
+    margin-top: 20px;
+    padding: 10px;
     width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+  .comment-section {
+    margin-top: 20px;
+    font-style: italic;
+    color: #555;
   }
 }
