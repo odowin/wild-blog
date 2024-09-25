@@ -1,5 +1,16 @@
 <div class="article-card">
-    <h2>Comment maîtriser Angular</h2>
-    <p>Angular est un framework puissant pour créer des applications web modernes. Dans cet article, nous explorerons les bases d'Angular et quelques conseils pour devenir un expert.</p>
+  <h2>{{ article.title }}</h2>
+  <p>Écrit par : {{ article.author }}</p>
+  <img [src]="article.image" alt="Image de l'article">
+  <div *ngIf="article.isPublished">
+    <p>{{ article.content }}</p>
   </div>
-  
+  <div>
+    <label for="comment">Ajouter un commentaire :</label>
+    <input id="comment" [(ngModel)]="article.comment" placeholder="Votre commentaire">
+    <p><strong>Commentaire :</strong> {{ article.comment }}</p>
+  </div>
+  <button (click)="togglePublication()">
+    {{ article.isPublished ? 'Dépublier' : 'Publier' }} l'article
+  </button>
+</div>
