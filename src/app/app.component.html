@@ -1,2 +1,26 @@
 <h1>Bienvenue sur le {{ title }} !</h1>
 <app-article></app-article>
+
+<div *ngIf="articles.length > 0; else noArticles">
+    <div *ngFor="let article of articles">
+      <div *ngIf="article.isPublished" class="article-container" [ngClass]="{'popular-article': article.likes > 100}">
+        <img [src]="article.image" alt="Image de {{ article.title }}" class="article-image">
+        <div class="article-content">
+          <h2 class="article-title" 
+            [ngClass]="{'highlight-blue': article.likes > 150}" 
+            [ngStyle]="{'color': article.likes > 150 ? 'white' : 'black'}">{{ article.title }}</h2>
+          <p class="article-author"><strong>Auteur:</strong> {{ article.author }}</p>
+          <p class="article-body">{{ article.content }}</p>
+          <p class="article-likes"><strong>Likes:</strong> {{ article.likes }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Template à afficher si aucun article n'est présent -->
+  <ng-template #noArticles>
+    <div class="no-articles">
+      <p>Aucun article publié pour le moment.</p>
+    </div>
+  </ng-template>
+  
