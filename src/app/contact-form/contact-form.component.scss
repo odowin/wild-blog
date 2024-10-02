@@ -1,0 +1,67 @@
+// Define some variables for consistent styling
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$error-color: #e74c3c;
+$font-family: 'Arial', sans-serif;
+
+// Global styles for the form
+form {
+    max-width: 500px; // Limit the width of the form
+    margin: 2rem auto; // Center the form
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    label {
+        display: block; // Make labels block-level elements
+        margin-bottom: 0.5rem; // Add some space below the label
+        font-weight: bold; // Bold text for labels
+        color: #333; // Default color for labels
+    }
+
+    input {
+        width: 100%; // Make input fields full width
+        padding: 0.5rem; // Add padding for better touch targets
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem; // Use a consistent font size
+        margin-bottom: 1rem; // Add space between inputs
+        transition: border-color 0.3s ease; // Smooth transition on focus
+
+        &:focus {
+            border-color: $primary-color; // Change border color on focus
+            outline: none; // Remove default outline
+        }
+    }
+
+    // Error message styles
+    div {
+        color: $error-color; // Set error message color to red
+        font-size: 0.875rem; // Slightly smaller font for error messages
+        margin-top: -0.5rem; // Bring error message closer to the input
+        margin-bottom: 1rem; // Space between the error message and the next input
+    }
+}
+
+// Add styles for submit button if needed
+button {
+    background-color: $secondary-color;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: darken($secondary-color, 10%); // Darken on hover
+    }
+
+    &:disabled {
+        background-color: #ccc; // Disable style for disabled button
+        cursor: not-allowed; // Change cursor to indicate disabled
+    }
+}
