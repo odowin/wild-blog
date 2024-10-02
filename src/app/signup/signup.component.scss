@@ -1,0 +1,69 @@
+// Variables
+$primary-color: #007bff; // Couleur principale
+$secondary-color: #6c757d; // Couleur secondaire
+$background-color: #f8f9fa; // Couleur de fond
+$error-color: #dc3545; // Couleur d'erreur
+$success-color: #28a745; // Couleur de succès
+$border-radius: 5px; // Rayon de bordure
+$input-padding: 10px; // Espacement interne des inputs
+
+form div {
+    margin-bottom: 10px;
+  }
+  
+  input {
+    display: block;
+    margin: 5px 0;
+  }
+  
+  small {
+    color: red;
+  }
+
+  input {
+    width: 100%;
+    padding: $input-padding;
+    border: 1px solid $secondary-color;
+    border-radius: $border-radius;
+    transition: border-color 0.3s;
+
+    &:focus {
+      border-color: $primary-color;
+      outline: none;
+    }
+
+    &.is-invalid {
+      border-color: $error-color;
+    }
+
+    &.is-valid {
+      border-color: $success-color;
+    }
+  }
+
+  .error-message {
+    color: $error-color;
+    font-size: 0.875em;
+    margin-top: 5px;
+  }
+
+  button {
+    width: 100%;
+    padding: $input-padding;
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: $border-radius;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  
+    &:disabled {
+      background-color: $secondary-color;
+      cursor: not-allowed;
+    }
+  }

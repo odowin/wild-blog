@@ -1,0 +1,41 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="username">Username</label>
+      <input id="username" formControlName="username" />
+      <div *ngIf="signupForm.get('username')?.touched && signupForm.get('username')?.invalid">
+        <small *ngIf="signupForm.get('username')?.errors?.['required']">Le nom d'utilisateur est obligatoire.</small>
+        <small *ngIf="signupForm.get('username')?.errors?.['minlength']">Au moins 3 caractères requis.</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" />
+      <div *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.invalid">
+        <small *ngIf="signupForm.get('email')?.errors?.['required']">L'email est obligatoire.</small>
+        <small *ngIf="signupForm.get('email')?.errors?.['email']">Email invalide.</small>
+      </div>
+    </div>
+  
+    <div formGroupName="passwordGroup">
+      <div>
+        <label for="password">Password</label>
+        <input id="password" type="password" formControlName="password" />
+        <div *ngIf="signupForm.get('passwordGroup.password')?.touched && signupForm.get('passwordGroup.password')?.invalid">
+          <small *ngIf="signupForm.get('passwordGroup.password')?.errors?.['required']">Le mot de passe est obligatoire.</small>
+          <small *ngIf="signupForm.get('passwordGroup.password')?.errors?.['passwordStrength']">Le mot de passe ne respecte pas les critères de sécurité.</small>
+        </div>
+      </div>
+  
+      <div>
+        <label for="confirmPassword">Confirm Password</label>
+        <input id="confirmPassword" type="password" formControlName="confirmPassword" />
+        <div *ngIf="signupForm.get('passwordGroup.confirmPassword')?.touched && signupForm.get('passwordGroup')?.errors?.['passwordsMismatch']">
+          <small>Les mots de passe ne correspondent pas.</small>
+        </div>
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="signupForm.invalid">S'inscrire</button>
+  </form>
+  
