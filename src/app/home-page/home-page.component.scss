@@ -1,0 +1,22 @@
+// home-page.component.scss
+
+@import '../app.component.scss';
+
+.home-page {
+  padding: 2rem;
+
+  h1 {
+    margin-bottom: 2rem;
+  }
+
+  .articles-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    app-article {
+      flex: 1 1 calc(33% - 2rem); // 3 articles par ligne avec des marges
+      margin: 1rem;
+    }
+  }
+}

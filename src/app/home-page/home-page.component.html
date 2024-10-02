@@ -1,0 +1,5 @@
+<div>
+  <h1>Liste des articles</h1>
+  @for (article of articles; track $index) {<app-article  [article]="article"></app-article>}
+  <!-- <app-article *ngFor="let article of articles" [article]="article"></app-article> -->
+</div>
