@@ -11,8 +11,14 @@ import { ArticleComponent } from "../article/article.component";
 
 export class HomePageComponent {
   articles = [
-    { title: 'Premier article', content: 'Contenu du premier article.' },
-    { title: 'Deuxième article', content: 'Contenu du deuxième article.' },
-    { title: 'Troisième article', content: 'Contenu du troisième article.' }
+    { title: 'Article 1', content: 'Contenu de l\'article 1' },
+    { title: 'Article 2', content: 'Contenu de l\'article 2' },
+    { title: 'Article 3', content: 'Contenu de l\'article 3' }
   ];
+
+  likedArticle: string | null = null; // Propriété pour stocker l'article liké
+
+  onArticleLiked(title: string) {
+    this.likedArticle = title; // Stocke le titre de l'article liké
+  }
 }

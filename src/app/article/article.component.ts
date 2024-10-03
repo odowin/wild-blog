@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-article',
@@ -9,6 +9,10 @@ import { Component, Input } from '@angular/core';
 })
 
 export class ArticleComponent {
-  @Input() article: any;  // Propriété @Input() pour recevoir l'article
-}
+  @Input() article: any;  // Propriété pour recevoir l'article depuis le parent
+  @Output() liked: EventEmitter<string> = new EventEmitter<string>();  // Événement pour émettre le titre liké
 
+  likeArticle() {
+    this.liked.emit(this.article.title);  // Émettre le titre de l'article liké
+  }
+}
