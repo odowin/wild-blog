@@ -1,0 +1,7 @@
+.button-container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    // align-items: center; /* Centre verticalement (si nécessaire) */
+    flex-wrap: wrap; /* Permet aux boutons de passer à la ligne si nécessaire */
+    height: 100vh; /* Optionnel: centrer verticalement dans toute la page */
+  }
