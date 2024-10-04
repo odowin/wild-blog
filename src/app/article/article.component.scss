@@ -52,3 +52,33 @@
     }
   }
 }
+
+button {
+  background-color: #ff6b6b; /* Couleur de fond initiale */
+  color: #fff; /* Couleur du texte */
+  border: none; /* Pas de bordure */
+  padding: 10px 20px; /* Espacement intérieur */
+  font-size: 16px; /* Taille du texte */
+  border-radius: 30px; /* Bords arrondis */
+  cursor: pointer; /* Curseur en forme de main */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transition douce pour l'animation */
+
+  &:hover {
+    background-color: #ff4c4c; /* Changement de couleur au survol */
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+  }
+
+  &:active {
+    background-color: #ff3838; /* Couleur lors du clic */
+    transform: scale(0.98); /* Réduction de taille lors du clic */
+  }
+
+  /* Style pour ajouter une ombre et un effet de surbrillance */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+  &:focus {
+    outline: none; /* Supprime le contour par défaut lors du focus */
+    box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.4); /* Ajoute une ombre plus prononcée lors du focus */
+  }
+}
+

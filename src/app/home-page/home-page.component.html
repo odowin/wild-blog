@@ -4,5 +4,11 @@
   <!-- @for (likedArticle; track $index) {} -->
   <!-- <p *ngIf="likedArticle">{{ likedArticle }} vient d'être liké.</p> -->
   <!-- <app-article *ngFor="let article of articles" [article]="article"></app-article> -->
-  @if (likedArticle){<p>L'article "{{ likedArticle }}" vient d'être liké.</p>}
+  @if (likedArticle){
+    <div class="notification" [ngClass]="{ 'show': isShown, 'hide': !isShown }">
+      <div class="icon">👍</div>
+      <div class="message">L'article {{ likedArticle }} vient d'être liké</div>
+    </div>
+    <!-- <p>L'article "{{ likedArticle }}" vient d'être liké.</p> -->
+  }
 </div>

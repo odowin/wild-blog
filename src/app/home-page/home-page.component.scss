@@ -20,3 +20,37 @@
     }
   }
 }
+
+
+.notification {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #4caf50; /* Vert pour indiquer un succès */
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.hide {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  .icon {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+
+  .message {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
