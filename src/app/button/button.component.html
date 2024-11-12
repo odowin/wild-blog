@@ -1,6 +1,8 @@
 <button 
+  (click)="onClick()"
   [ngStyle]="{'background-color': isHovered ? hoverColor : backgroundColor}"
   (mouseenter)="onMouseEnter()"
   (mouseleave)="onMouseLeave()">
   {{ label }}
 </button>
+

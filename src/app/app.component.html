@@ -243,11 +243,18 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <div class="button-container">
-  <app-button [backgroundColor]="'orange'" [hoverColor]="'darkorange'" [label]="'Orange Button'"></app-button>
-  <app-button [backgroundColor]="'green'" [hoverColor]="'darkgreen'" [textColor]="'white'" [label]="'Green Button'"></app-button>
-  <app-button [backgroundColor]="'transparent'" [hoverColor]="'lightgray'" [label]="'Transparent Button'"></app-button>
-  <app-button [backgroundColor]="'blue'" [hoverColor]="'darkblue'" [textColor]="'white'" [padding]="'15px'" [label]="'Blue Button'"></app-button>
-  <app-button [backgroundColor]="'red'" [hoverColor]="'darkred'" [label]="'Red Button'"></app-button>
+  <app-button [backgroundColor]="'orange'" [hoverColor]="'darkorange'" [label]="'Orange Button'" (buttonClick)="onButtonClick($event)"></app-button>
+  <app-button [backgroundColor]="'green'" [hoverColor]="'darkgreen'" [textColor]="'white'" [label]="'Green Button'" (buttonClick)="onButtonClick($event)"></app-button>
+  <app-button [backgroundColor]="'transparent'" [hoverColor]="'lightgray'" [label]="'Transparent Button'" (buttonClick)="onButtonClick($event)"></app-button>
+  <app-button [backgroundColor]="'blue'" [hoverColor]="'darkblue'" [textColor]="'white'" [padding]="'15px'" [label]="'Blue Button'" (buttonClick)="onButtonClick($event)"></app-button>
+  <app-button [backgroundColor]="'red'" [hoverColor]="'darkred'" [label]="'Red Button'" (buttonClick)="onButtonClick($event)"></app-button>
 </div>
-
+@if(showMessage){
+  <div class="button-clicked-message">
+    {{ clickedButton }}
+  </div>
+}
+<!-- <div *ngIf="clickedButton">
+  {{ clickedButton }}
+</div> -->
 <router-outlet />
