@@ -1,0 +1,9 @@
+
+  <div *ngIf="article">
+    <h2>{{ article.title }}</h2>
+    <p>{{ article.content }}</p>
+  </div>
+  <div *ngIf="!article">
+    <p>Pas d'article correspondant...</p>
+  </div>
+  
