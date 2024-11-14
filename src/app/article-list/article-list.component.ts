@@ -1,20 +1,8 @@
-import { Component, OnInit, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { ArticlesService } from '../articles.service';
+import { Article } from '../models/article.model';
 import { RouterModule } from '@angular/router';
-
-interface Article {
-  id: number;
-  title: string;
-  content: string;
-  createdAt: string;
-  image: string;
-  likeCount: number;
-  isPublished: boolean;
-  categoryName: string;
-  isLiked: boolean;
-}
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-article-list',
@@ -23,21 +11,16 @@ interface Article {
   templateUrl: './article-list.component.html',
   styleUrl: './article-list.component.scss'
 })
-
 export class ArticleListComponent implements OnInit {
+
   articles: Article[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private articlesService: ArticlesService) { }
 
   ngOnInit(): void {
-    this.getArticles();
-  }
-
-  getArticles(): void {
-    this.http.get<Article[]>('http://localhost:3000/articles')
-      .subscribe(data => {
-        this.articles = data;
-        console.log(data);
-      });
+    // Récupère la liste des articles
+    this.articlesService.getArticles().subscribe((data: Article[]) => {
+      this.articles = data;
+    });
   }
 }

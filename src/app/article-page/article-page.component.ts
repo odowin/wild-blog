@@ -1,9 +1,12 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Article } from '../models/article.model';
 import { CommonModule } from '@angular/common';
+
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ArticlesService } from '../articles.service';
+import { Article } from '../models/article.model';
 
 
 @Component({
@@ -14,18 +17,19 @@ import { CommonModule } from '@angular/common';
   styleUrl: './article-page.component.scss'
 })
 export class ArticlePageComponent implements OnInit {
-  article: any;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {}
+  article: Article | undefined;
+
+  constructor(
+    private articlesService: ArticlesService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    // Récupère l'ID de l'article depuis l'URL
-    const articleId = this.route.snapshot.paramMap.get('id');
-
-    // Fait une requête HTTP pour récupérer les détails de l'article
-    this.http.get(`http://localhost:3000/articles/${articleId}`).subscribe((data) => {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    // Récupère l'article par son ID
+    this.articlesService.getArticleById(id).subscribe((data: Article) => {
       this.article = data;
-      console.log(data);
     });
   }
 }
