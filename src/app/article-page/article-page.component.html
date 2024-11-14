@@ -25,7 +25,7 @@
                 </div>
                 <div class="article-footer">
                   <span class="likes">{{ article.likeCount }} Likes</span>
-                  <span class="status" [class.published]="article.isPublished">{{ article.isPublished ? 'Publié' : 'Non publié' }}</span>
+                  <span class="status {{article.isPublished ? 'published' : 'unpublished' }}" [class.published]="article.isPublished">{{ article.isPublished ? 'Publié' : 'Non publié' }}</span>
                 </div>
               </div>
             </div>

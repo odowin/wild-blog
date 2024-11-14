@@ -17,7 +17,7 @@
             <img [src]="article.image" alt="{{ article.title }}">
           </div>
           <div class="icon">
-            <a [routerLink]="['/articles', article.id]" class="iconBox"> <span class="material-symbols-outlined">
+            <a [routerLink]="['/articles', article.id]" class="iconBox {{article.isPublished ? 'published' : 'unpublished' }}"> <span class="material-symbols-outlined">
                 arrow_outward
               </span></a>
           </div>
@@ -30,6 +30,29 @@
           <li style="--clr-tag:#bebebe;" class="{{article.categoryName}}">{{article.categoryName}}</li>
           <!-- <li style="--clr-tag:#70b3b1;" class="packaging">packaging</li>
           <li style="--clr-tag:#d05fa2;" class="marketing">marketing</li> -->
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-inner" style="--clr:#fff;">
+        <div class="box">
+          <div class="imgBox">
+            <img src="https://placehold.co/150x150" alt="Fake">
+          </div>
+          <div class="icon">
+            <a href="/articles/0" class="iconBox"> <span class="material-symbols-outlined">
+                arrow_outward
+              </span></a>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <h3>Faux article</h3>
+        <p>C'est un faux article (clique quand-même)</p>
+        <ul>
+          <li style="--clr-tag:#9ad3ad;" class="example">example</li>
+          <li style="--clr-tag:#d0a15f;" class="faker">faker</li>
         </ul>
       </div>
     </div>

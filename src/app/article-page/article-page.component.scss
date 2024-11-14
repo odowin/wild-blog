@@ -144,14 +144,17 @@ section {
 
         .likes {
           font-weight: bold;
-          color: #ff6347;
+          color: #f94b96;
         }
 
         .status {
           font-weight: bold;
           color: #28a745;
           &.published {
-            color: #28a745;
+            color: #4CAF50;
+          }
+          &.unpublished {
+            color: #F44336;
           }
         }
       }

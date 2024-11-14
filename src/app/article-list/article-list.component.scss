@@ -40,14 +40,21 @@ section {
     gap: 2rem;
 
     .card {
-      &:nth-child(1) .box .icon .iconBox {
-        background: #d3b19a;
+    //   &:nth-child(1) .box .icon .iconBox {
+    //     background: #d3b19a;
+    //   }
+    //   &:nth-child(2) .box .icon .iconBox {
+    //     background: #70b3b1;
+    //   }
+    //   &:nth-child(3) .box .icon .iconBox {
+    //     background: #d05fa2;
+    //   }
+      .box .icon .iconBox.published {
+        background: #4CAF50; // Vert pour les articles publiés
       }
-      &:nth-child(2) .box .icon .iconBox {
-        background: #70b3b1;
-      }
-      &:nth-child(3) .box .icon .iconBox {
-        background: #d05fa2;
+    
+      .box .icon .iconBox.unpublished {
+        background: #F44336; // Rouge pour les articles non publiés
       }
 
       ul {
