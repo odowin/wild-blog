@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ArticlesService } from '../articles.service';
 import { Article } from '../models/article.model';
 import { RouterModule } from '@angular/router';
@@ -15,7 +15,8 @@ export class ArticleListComponent implements OnInit {
 
   articles: Article[] = [];
 
-  constructor(private articlesService: ArticlesService) { }
+  // constructor(private articlesService: ArticlesService) { } Merci le J
+  private articlesService = inject(ArticlesService);
 
   ngOnInit(): void {
     // Récupère la liste des articles
