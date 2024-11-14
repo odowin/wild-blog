@@ -58,7 +58,7 @@ section {
         align-items: center;
         flex-wrap: wrap;
         gap: 0.625rem;
-
+      
         li {
           text-transform: uppercase;
           background: var(--clr-tag);
@@ -68,19 +68,43 @@ section {
           padding: 0.375rem 0.625rem;
           border-radius: 0.188rem;
         }
-
-        .branding {
+      
+        .API {
+          background: #d3b19a;
           color: darken(#d3b19a, 40%);
         }
-
-        .packaging {
+      
+        .Angular {
+          background: #70b3b1;
           color: darken(#70b3b1, 40%);
         }
-
-        .marketing {
+      
+        .JavaScript {
+          background: #d05fa2;
           color: darken(#d05fa2, 40%);
         }
+      
+        .Spring {
+          background: #6f8e60;
+          color: darken(#6f8e60, 40%);
+        }
+      
+        .Basededonnées {
+          background: #7098a6;
+          color: darken(#7098a6, 40%);
+        }
+      
+        .Web {
+          background: #f0b3a1;
+          color: darken(#f0b3a1, 40%);
+        }
+      
+        .React {
+          background: #6fa8d5;
+          color: darken(#6fa8d5, 40%);
+        }
       }
+      
 
       .content {
         padding: 0.938rem 0.625rem;

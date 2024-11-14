@@ -20,7 +20,7 @@
                 <h2 class="article-title">{{ article.title }}</h2>
                 <p class="article-content">{{ article.content }}</p>
                 <div class="article-tags">
-                  <span class="category">{{ article.categoryName }}</span>
+                  <span class="category {{ article.categoryName }}">{{ article.categoryName }}</span>
                   <span class="date">{{ article.createdAt | date: 'd MMM yyyy' }}</span>
                 </div>
                 <div class="article-footer">
