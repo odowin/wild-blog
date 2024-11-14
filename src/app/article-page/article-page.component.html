@@ -1,9 +1,43 @@
-
-  <div *ngIf="article">
+<!-- <div *ngIf="article">
     <h2>{{ article.title }}</h2>
     <p>{{ article.content }}</p>
   </div>
+  
   <div *ngIf="!article">
     <p>Pas d'article correspondant...</p>
-  </div>
+  </div> -->
+
+  <section>
+    <div *ngIf="article">
+      <div class="article-container">
+        <div class="card">
+          <div class="card-inner">
+            <div class="box">
+              <div class="imgBox">
+                <img [src]="article.image" alt="Article image" />
+              </div>
+              <div class="content">
+                <h2 class="article-title">{{ article.title }}</h2>
+                <p class="article-content">{{ article.content }}</p>
+                <div class="article-tags">
+                  <span class="category">{{ article.categoryName }}</span>
+                  <span class="date">{{ article.createdAt | date: 'd MMM yyyy' }}</span>
+                </div>
+                <div class="article-footer">
+                  <span class="likes">{{ article.likeCount }} Likes</span>
+                  <span class="status" [class.published]="article.isPublished">{{ article.isPublished ? 'Publié' : 'Non publié' }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div *ngIf="!article">
+      <p class="no-article-message">Pas d'article correspondant...</p>
+    </div>
+  </section>
+  
+  
   
